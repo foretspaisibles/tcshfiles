@@ -1,6 +1,7 @@
 ### admin.files.mk -- Install administration files
 
-ADMINDIR = /etc
+PREFIX?=
+ADMINDIR = ${PREFIX}/etc
 ADMINMODE = 444
 ADMINOWN = root
 ADMINGRP = wheel
