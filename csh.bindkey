@@ -38,6 +38,8 @@ if ( $?TERM ) then
 	breaksw;
 
     endsw
+else
+    set csh_bindkey='/etc/csh.bindkey.inexistant'
 endif
 
 if ( -e $csh_bindkey ) then
