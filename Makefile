@@ -1,5 +1,8 @@
 ### Makefile
 
+VERSION = 1.0
+AUTHOR = Michaël Grünewald
+
 ADMIN = csh.cshrc
 ADMIN+= csh.login
 ADMIN+= csh.logout
