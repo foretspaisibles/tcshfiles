@@ -13,5 +13,6 @@ FILESGROUPS+= ADMIN
 .include "bps.clean.mk"
 .include "bps.files.mk"
 .include "bps.usertarget.mk"
+.include "bps.dist.mk"
 
 ### End of file `admin.files.mk'
