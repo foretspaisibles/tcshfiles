@@ -35,11 +35,13 @@ set complete_atacontrol_words=( \
 
 set complete_atacontrol_devices=`find /dev -maxdepth 1 -and \( -name 'acd[0-9]*' -or -name 'ad[0-9]*' \)`
 
-alias complete_list_packages ls /var/db/pkg
+alias complete_list_packages 'if ( -d /var/db/pkg) then; ls /var/db/pkg; endif'
 alias complete_list_system_rc ls /etc/rc.d/
 
 complete pkg_delete 'C/*/`complete_list_packages`/'
+complete pkg_deinstall 'C/*/`complete_list_packages`/'
 complete pkg_info 'C/*/`complete_list_packages`/'
+complete pkg_glob 'C/*/`complete_list_packages`/'
 complete portupgrade 'C/*/`complete_list_packages`/'
 
 complete cdcontrol 'p/1/$complete_cdcontrol_words/'
