@@ -6,7 +6,6 @@ ADMIN+= csh.logout
 ADMIN+= csh.bindkey
 ADMIN+= csh.bindkey.xterm
 ADMIN+= csh.bindkey.bsd
-ADMIN+= csh.bindkey.darwin
 ADMIN+= csh.bindkey.linux
 ADMIN+= csh.complete
 
