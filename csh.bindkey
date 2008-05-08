@@ -1,3 +1,4 @@
+#! /bin/csh -f
 ### csh.bindkey -- Laisons des focntions de TCSDH au clavier
 
 # Author: Michaël Grünewald
@@ -18,39 +19,26 @@
 #   This is the .tcshrc.bindkey file, part of the TCSHRC project
 #   at http://tcshrc.sourceforge.net
 
-switch ( ${OSTYPE} )
-  case "darwin":
-  alias termname echo darwin
-  breaksw;
+if ( $?TERM ) then
+    switch ( `termname` )
+    case "linux":
+	set csh_bindkey='/etc/csh.bindkey.linux'
+	breaksw;
 
-  default:
-  breaksw;
+    case "cons25":
+	set csh_bindkey='/etc/csh.bindkey.cons25'
+	breaksw;
 
-endsw
+    case "xterm*":
+	set csh_bindkey='/etc/csh.bindkey.xterm'
+	breaksw;
 
+    default:
+	set csh_bindkey='/etc/csh.bindkey.inexistant'
+	breaksw;
 
-switch ( `termname` )
-  case "linux":
-  set csh_bindkey='/etc/csh.bindkey.linux'
-  breaksw;
-
-  case "cons25":
-  set csh_bindkey='/etc/csh.bindkey.bsd'
-  breaksw;
-
-  case "darwin":
-  set csh_bindkey='/etc/csh.bindkey.darwin'
-  breaksw;
-
-  case "xterm*":
-  set csh_bindkey='/etc/csh.bindkey.xterm'
-  breaksw;
-
-  default:
-  set csh_bindkey='/etc/csh.bindkey.inexistant'
-  breaksw;
-
-endsw
+    endsw
+endif
 
 if ( -e $csh_bindkey ) then
   source $csh_bindkey
