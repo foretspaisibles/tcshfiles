@@ -1,0 +1,96 @@
+### csh.bindkey.bsd -- Liaisons des touches dans une console BSD
+
+# Author: Michaël Grünewald
+# Date: Ven 18 jan 2008 21:16:42 CET
+# Lang: fr_FR.ISO8859-15
+
+# $Id$
+
+#
+# Basic settings
+#
+
+# INSERT: toggles overwrite or insert mode
+bindkey '^[[L' overwrite-mode
+
+# DELETE: delete char at cursor position
+# I am unable to guess the code for this key.
+# bindkey '^?' delete
+
+# HOME: go to the beginning of the line
+bindkey '^[[H' beginning-of-line
+
+# END: go to the end of the line
+bindkey '^[[F' end-of-line
+
+# PAGE UP: search in history backwards for line beginning as current
+bindkey '^[[I' history-search-backward
+
+# PAGE DOWN: search in history forwards for line beginning as current
+bindkey '^[[G' history-search-forward
+
+# ESC-left-arrow: go to beginning of left word
+bindkey '^[^[[D' vi-word-back
+
+# ESC-right-arrow: go to beginning of right word
+bindkey '^[^[[C' vi-word-fwd
+
+# F1 : help on command currently typed
+#
+# Example: if 'ls passwd' is on your input line, help on 'ls'
+bindkey '^[[M' run-help
+
+# F2: set the mark command to cursor position
+bindkey '^[[N' set-mark-command 
+
+# F3: move cursor to the marked position
+bindkey '^[[O' exchange-point-and-mark 
+
+# F4: unbound
+bindkey '^[[P' undefined-key
+
+# F5: check line for spelling and make changes
+bindkey '^[[Q' spell-line
+
+# F6: check current word for spelling and make changes
+bindkey '^[[R' spell-word
+
+# F7: do a ala-csh completion
+bindkey '^[[S' complete-word-raw
+
+# F8: insert last item of previous command
+bindkey '^[[T' insert-last-word
+
+# F9: unbound
+bindkey '^[[U' undefined-key
+
+# F10: do an 'ls -l'
+bindkey -s '^[[V'  "^Uls -l\n"
+
+# F11: display load average and current process status
+bindkey '^[[W' load-average
+
+# F12: clear-screen
+# You may be in the middle of a command when you use this.
+# Does not affect what you are writing at the moment.
+bindkey '^[[X' clear-screen
+
+#
+# Advanced settings
+#
+
+# Eazy edit of path, type Ctrl-X p
+#  (Thanks to Carlos Duarte <cgd@teleweb.pt>)
+bindkey -s 'p' '. `echo $path`^X*)^A^Dset path = ('
+
+# Ctrl-X *   Expand glob. example: ls *<^X*>  will expand the line
+# default behaviour
+
+# Ctrl-X $   Expand variables. example: $TERM<^X$> with give  vt100
+# default behaviour
+
+# Local Variables:
+# mode: shell-script
+# End:
+
+### End of file `csh.bindkey.bsd'

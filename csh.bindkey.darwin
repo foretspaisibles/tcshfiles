@@ -1,0 +1,96 @@
+### csh.bindkey.darwin -- Liaisons des touches dans une console DARWIN
+
+# Author: Michaël Grünewald
+# Date: Ven 18 jan 2008 21:16:42 CET
+# Lang: fr_FR.ISO8859-15
+
+# $Id$
+
+#
+# Basic settings
+#
+
+# INSERT: toggles overwrite or insert mode
+#bindkey '' overwrite-mode
+
+# DELETE: delete char at cursor position
+# default behaviour
+# bindkey '^[[3~'
+
+# SHIFT HOME: go to the beginning of the line
+bindkey '^[[H' beginning-of-line
+
+# SHIFT END: go to the end of the line
+bindkey '^[[F' end-of-line
+
+# SHIFT PAGE UP: search in history backwards for line beginning as current
+bindkey '^[[5~' history-search-backward
+
+# SHIFT PAGE DOWN: search in history forwards for line beginning as current
+bindkey '^[[6~' history-search-forward
+
+# CTRL-left-arrow: go to beginning of left word
+bindkey '^[[5D' vi-word-back
+
+# CTRL-right-arrow: go to beginning of right word
+bindkey '^[[5C' vi-word-fwd
+
+# F1 : help on command currently typed
+#
+# Example: if 'ls passwd' is on your input line, help on 'ls'
+bindkey '^[OP' run-help
+
+# F2: set the mark command to cursor position
+bindkey '^[OQ' set-mark-command 
+
+# F3: move cursor to the marked position
+bindkey '^[OR' exchange-point-and-mark 
+
+# F4: unbound
+bindkey '^[OS' undefined-key
+
+# F5: check line for spelling and make changes
+bindkey '^[[15~' spell-line
+
+# F6: check current word for spelling and make changes
+bindkey '^[[17~' spell-word
+
+# F7: do a ala-csh completion
+bindkey '^[[18~' complete-word-raw
+
+# F8: insert last item of previous command
+bindkey '^[[19~' insert-last-word
+
+# F9: unbound
+bindkey '^[[20~' undefined-key
+
+# F10: do an 'ls -l'
+bindkey -s '^[[21~'  "^Uls -l\n"
+
+# F11: display load average and current process status
+bindkey '^[[23~' load-average
+
+# F12: clear-screen
+# You may be in the middle of a command when you use this.
+# Does not affect what you are writing at the moment.
+bindkey '^[[24~' clear-screen
+
+#
+# Advanced settings
+#
+
+# Eazy edit of path, type Ctrl-X p
+#  (Thanks to Carlos Duarte <cgd@teleweb.pt>)
+bindkey -s '^Xp' '. `echo $path`^X*)^A^Dset path = ('
+
+# Ctrl-X *   Expand glob. example: ls *<^X*>  will expand the line
+# default behaviour
+
+# Ctrl-X $   Expand variables. example: $TERM<^X$> with give  vt100
+# default behaviour
+
+# Local Variables:
+# mode: shell-script
+# End:
+
+### End of file `csh.bindkey.darwin'

@@ -1,0 +1,56 @@
+### csh.complete
+
+# Author: Michaël Grünewald
+# Date: Ven 18 jan 2008 23:30:17 CET
+# Lang: fr_FR.ISO8859-15
+
+# $Id$
+
+#
+# Generic
+#
+
+set complete_growisofs_dvdrom='/dev/dvdrom'
+
+complete cd 'p/1/d/'
+complete dd \
+    'c/if=/f/' \
+    'c/of=/f/'
+
+complete growisofs \
+    'c/-/(M Z)/' \
+    'c/*=/f/' \
+    'n/-[ZM]/$complete_growisofs_dvdrom/=/'
+
+#
+# FreeBSD
+#
+
+set complete_cdcontrol_words=( \
+    close debug open eject help info next previous pause stop cdid )
+
+set complete_atacontrol_words=( \
+    list info attach detach reinit create delete addspare rebuild\
+    status mode cap )
+
+set complete_atacontrol_devices=`find /dev -maxdepth 1 -and \( -name 'acd[0-9]*' -or -name 'ad[0-9]*' \)`
+
+alias complete_list_packages ls /var/db/pkg
+alias complete_list_system_rc ls /etc/rc.d/
+
+complete pkg_delete 'C/*/`complete_list_packages`/'
+complete pkg_info 'C/*/`complete_list_packages`/'
+complete portupgrade 'C/*/`complete_list_packages`/'
+
+complete cdcontrol 'p/1/$complete_cdcontrol_words/'
+complete atacontrol \
+    'p/1/$complete_atacontrol_words/' \
+    'c/ata/(0 1 2 3 4 5 6 7 8 9)/' \
+    'n/{info,attach,detach,reinit}/(ata)//' \
+    'n/{mode,cap}/$complete_atacontrol_devices/'
+
+# Local Variables:
+# mode: shell-script
+# End:
+
+### End of file `csh.complete'
