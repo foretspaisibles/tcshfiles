@@ -20,7 +20,7 @@
 #   at http://tcshrc.sourceforge.net
 
 if ( $?TERM ) then
-    switch ( `termname` )
+    switch ( $TERM )
     case "linux":
 	set csh_bindkey='/etc/csh.bindkey.linux'
 	breaksw;
