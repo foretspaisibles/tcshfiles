@@ -1,5 +1,6 @@
 ### Makefile
 
+PROJECT = tcshfiles
 VERSION = 1.0
 AUTHOR = Michaël Grünewald
 
