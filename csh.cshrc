@@ -443,27 +443,15 @@ setenv BLOCKSIZE K
 setenv CLICOLOR yes
 
 #
-# Support pour l'environnement GNUSTEP
+# CSH RC Repository
 #
 
-# Information for gnustep-1.13.0:
-#  (pkg_info -D gnustep-1.13.0)
-
-if ( -e /usr/local/GNUstep/System/Library/Makefiles/GNUstep.csh ) then
-	source /usr/local/GNUstep/System/Library/Makefiles/GNUstep.csh
+if ( -d /etc/tcshrc.d ) then
+	foreach csh_file ( /etc/tcshrc.d/*.csh )
+		source $csh_file
+	end
+	unset csh_file
 endif
-
-
-#
-# Bindkey
-#
-
-foreach csh_file ( /etc/csh.bindkey /etc/csh.complete )
-  if ( -e $csh_file ) then
-	source $csh_file
-  endif
-end
-unset csh_file
 
 # Local Variables:
 # mode: shell-script

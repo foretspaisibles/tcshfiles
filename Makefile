@@ -4,15 +4,17 @@ PROJECT = tcshfiles
 VERSION = 1.0
 AUTHOR = Michaël Grünewald
 
-ADMIN = csh.cshrc
-ADMIN+= csh.login
-ADMIN+= csh.logout
-ADMIN+= csh.bindkey
-ADMIN+= csh.bindkey.xterm
-ADMIN+= csh.bindkey.cons25
-ADMIN+= csh.bindkey.linux
-ADMIN+= csh.complete
+TCSH = csh.cshrc
+TCSH+= csh.login
+TCSH+= csh.logout
+TCSH+= bindkey.csh
+TCSH+= bindkey.xterm
+TCSH+= bindkey.cons25
+TCSH+= bindkey.linux
+TCSH+= complete.csh
+TCSH+= gnustep.csh
+TCSH+= compat-i386.csh
 
-.include "admin.files.mk"
+.include "conf.tcsh.mk"
 
 ### End of file `Makefile'
