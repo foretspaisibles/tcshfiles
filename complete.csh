@@ -37,7 +37,7 @@ complete make \
 # Operator
 #
 
-set complete_growisofs_dvdrom='/dev/dvdrom'
+set _complete_growisofs_dvdrom='/dev/dvdrom'
 
 complete dd \
     'c/if=/f/' \
@@ -46,7 +46,7 @@ complete dd \
 complete growisofs \
     'c/-/(M Z)/' \
     'c/*=/f/' \
-    'n/-[ZM]/$complete_growisofs_dvdrom/=/'
+    'n/-[ZM]/$_complete_growisofs_dvdrom/=/'
 
 #
 # Subversion
@@ -87,7 +87,7 @@ complete acroread	'n/*/f:*.pdf/'
 # Subversion
 #
 
-set complete_svn_words=(\
+set _complete_svn_words=(\
 	add blame praise annotate ann cat checkout co cleanup commit	\
 	ci copy cp delete del remove rm diff di export help import	\
 	info list ls lock log merge mkdir move mv rename ren propdel	\
@@ -97,51 +97,51 @@ set complete_svn_words=(\
 	)
 
 complete svn \
-	'p/1/$complete_svn_words/'	\
-	'n/help/$complete_svn_words/'
+	'p/1/$_complete_svn_words/'	\
+	'n/help/$_complete_svn_words/'
 
 
 #
 # FreeBSD specific
 #
 
-set complete_cdcontrol_words=( \
+set _complete_cdcontrol_words=( \
     close debug open eject help info next previous pause stop cdid )
 
-set complete_atacontrol_words=( \
+set _complete_atacontrol_words=( \
     list info attach detach reinit create delete addspare rebuild\
     status mode cap )
 
-alias complete_atacontrol_devices \
+alias _complete_atacontrol_devices \
     'find /dev -maxdepth 1 -and \( -name "acd[0-9]*" -or -name "ad[0-9]*" \)'
 
-alias complete_mount_points \
+alias _complete_mount_points \
     'awk '\''/^#/ { next } { print $2 }'\'' /etc/fstab'
 
-set complete_mount_fstype=( \
+set _complete_mount_fstype=( \
     ufs nfs nullfs devfs procfs linprocfs ext2fs msdosfs ntfs cd9660 )
 
-alias complete_list_packages \
+alias _complete_list_packages \
     'if ( -d /var/db/pkg) then; ls /var/db/pkg; endif'
 
-alias complete_list_rc \
+alias _complete_list_rc \
     'ls /etc/rc.d /usr/local/etc/rc.d'
 
 complete {pkg_{delete,deinstall,info,glob},portupgrade} \
-    'C/*/`complete_list_packages`/'
+    'C/*/`_complete_list_packages`/'
 
 complete cdcontrol \
-    'p/1/$complete_cdcontrol_words/'
+    'p/1/$_complete_cdcontrol_words/'
 
 complete atacontrol \
-    'p/1/$complete_atacontrol_words/' \
+    'p/1/$_complete_atacontrol_words/' \
     'c/ata/(0 1 2 3 4 5 6 7 8 9)/' \
     'n/{info,attach,detach,reinit}/(ata)/' \
-    'n/{mode,cap}/`complete_atacontrol_devices`/'
+    'n/{mode,cap}/`_complete_atacontrol_devices`/'
 
 complete mount \
-    'n/-t/$complete_mount_fstype/' \
-    'p/1/`complete_mount_points`/' \
+    'n/-t/$_complete_mount_fstype/' \
+    'p/1/`_complete_mount_points`/' \
     'p/*/f/'
 
 
