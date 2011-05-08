@@ -88,17 +88,74 @@ complete acroread	'n/*/f:*.pdf/'
 #
 
 set _complete_svn_words=(\
-	add blame praise annotate ann cat checkout co cleanup commit	\
-	ci copy cp delete del remove rm diff di export help import	\
-	info list ls lock log merge mkdir move mv rename ren propdel	\
-	pdel pd propedit pedit pe propget pget pg proplist plist pl	\
-	propset pset ps resolved revert status stat st switch sw	\
-	unlock update up	\
-	)
+    add blame praise annotate ann cat checkout co cleanup commit	\
+    ci copy cp delete del remove rm diff di export help import		\
+    info list ls lock log merge mkdir move mv rename ren propdel	\
+    pdel pd propedit pedit pe propget pget pg proplist plist pl		\
+    propset pset ps resolved revert status stat st switch sw		\
+    unlock update up	\
+    )
 
 complete svn \
-	'p/1/$_complete_svn_words/'	\
-	'n/help/$_complete_svn_words/'
+    'p/1/$_complete_svn_words/'	\
+    'n/help/$_complete_svn_words/'
+
+
+#
+# GIT
+#
+
+set _complete_git_words=(\
+    add am archive bisect branch bundle checkout cherry-pick citool	\
+    clean clone commit config describe diff fetch format-patch gc grep	\
+    gui	init log merge mv notes pull push rebase reset revert rm	\
+    shortlog show stash status submodule svn tag			\
+    )
+
+set _complete_git_svn_words=(\
+    init fetch clone rebase dcommit branch log blame find-rev		\
+    set-tree create-ignore show-ignore mkdirs commit-diff info		\
+    proplist propget show-externals gc reset				\
+    )
+
+alias _complete_git_alias \
+    'git config --get-regexp "alias.*" | sed -n "s@alias\.\([^ ]*\).*@\1@p"'
+
+alias _complete_git_branch \
+    'git for-each-ref --format="%(refname)" refs/heads refs/remotes | sed -e s@refs/remotes/@@ -e s@refs/heads/@@'
+
+alias _complete_git_origin_branch \
+    'git for-each-ref --format="%(refname)" refs/remotes/origin | sed -n -e "@HEAD@d" -e "s@refs/remotes/origin/@@"'
+
+alias _complete_git_command \
+    '_complete_git_alias | xargs echo $_complete_git_words'
+
+complete git \
+    'p/1/$_complete_git_words/' \
+    'n/svn/$_complete_git_svn_words/' \
+    'n/help/$_complete_git_words/' \
+    'n/branch/`_complete_git_branch | xargs echo -m -d`/' \
+    'n/config/(--global --get-regexp --list)/' \
+    'n/diff/`_complete_git_branch | xargs echo --check --staged --stat -- *`/' \
+    'n/difftool/`_complete_git_branch | xargs echo --no-prompt --staged -- *`/' \
+    'n/fetch/`git remote`/' \
+    'n/merge/`_complete_git_branch`/' \
+    'n/log/`_complete_git_branch | xargs echo -- --name-only --name-status --reverse --committer= --no-color --relative --ignore-space-change --ignore-space-at-eol --format=medium --format=full --format=fuller`/' \
+    'n/stash/(apply list save pop clear)/' \
+    'n/push/`git remote`/' \
+    'N/push/`_complete_git_origin_branch`/' \
+    'n/pull/`git remote | xargs echo --rebase`/' \
+    'n/--rebase/`git remote`/' \
+    'N/--rebase/`_complete_git_origin_branch`/' \
+    'N/pull/`_complete_git_origin_branch`/' \
+    'n/rebase/`_complete_git_branch | xargs echo --continue --abort --onto --skip --interactive`/' \
+    'N/rebase/`_complete_git_branch`/' \
+    'n/remote/(show add rm prune update)/' \
+    'N/remote/`git remote`/' \
+    'n/checkout/`_complete_git_branch | xargs echo -b --`/' \
+    'N/-b/`_complete_git_branch`/'
+
+    
 
 
 #
