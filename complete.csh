@@ -141,7 +141,9 @@ complete atacontrol \
 
 complete mount \
     'n/-t/$complete_mount_fstype/' \
-    'p/*/`complete_mount_points`/' 
+    'p/1/`complete_mount_points`/' \
+    'p/*/f/'
+
 
 # Local Variables:
 # mode: shell-script
