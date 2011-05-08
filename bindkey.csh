@@ -22,19 +22,19 @@
 if ( $?TERM ) then
     switch ( $TERM )
     case "linux":
-	set csh_bindkey='/etc/bindkey.linux'
+	set csh_bindkey='bindkey.linux'
 	breaksw;
 
     case "cons25":
-	set csh_bindkey='/etc/bindkey.cons25'
+	set csh_bindkey='bindkey.cons25'
 	breaksw;
 
     case "xterm*":
-	set csh_bindkey='/etc/bindkey.xterm'
+	set csh_bindkey='bindkey.xterm'
 	breaksw;
 
     default:
-	set csh_bindkey='/etc/bindkey.inexistant'
+	set csh_bindkey='bindkey.inexistant'
 	breaksw;
 
     endsw
@@ -42,8 +42,8 @@ else
     set csh_bindkey='/etc/bindkey.inexistant'
 endif
 
-if ( -e $csh_bindkey ) then
-  source $csh_bindkey
+if ( -e /etc/tcshrc.d/$csh_bindkey ) then
+  source /etc/tcshrc.d/$csh_bindkey
 endif
 
 unset csh_bindkey
