@@ -4,16 +4,18 @@ PROJECT = tcshfiles
 VERSION = 1.0
 AUTHOR = Michaël Grünewald
 
-TCSH = csh.cshrc
-TCSH+= csh.login
-TCSH+= csh.logout
-TCSH+= bindkey.csh
-TCSH+= bindkey.xterm
-TCSH+= bindkey.cons25
-TCSH+= bindkey.linux
-TCSH+= complete.csh
-TCSH+= gnustep.csh
-TCSH+= compat-i386.csh
+CSH = csh.cshrc
+CSH+= csh.login
+CSH+= csh.logout
+
+CSHRC+= bindkey.csh
+CSHRC+= complete.csh
+CSHRC+= gnustep.csh
+CSHRC+= compat-i386.csh
+
+CSHBINDKEY+= bindkey.xterm
+CSHBINDKEY+= bindkey.cons25
+CSHBINDKEY+= bindkey.linux
 
 .include "conf.tcsh.mk"
 

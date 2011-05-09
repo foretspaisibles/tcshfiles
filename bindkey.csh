@@ -34,16 +34,16 @@ if ( $?TERM ) then
 	breaksw;
 
     default:
-	set csh_bindkey='bindkey.inexistant'
+	set csh_bindkey='bindkey.unsupported'
 	breaksw;
 
     endsw
 else
-    set csh_bindkey='/etc/bindkey.inexistant'
+    set csh_bindkey='bindkey.inexistant'
 endif
 
-if ( -e /etc/tcshrc.d/$csh_bindkey ) then
-  source /etc/tcshrc.d/$csh_bindkey
+if ( -e /etc/csh/bindkey.d/$csh_bindkey ) then
+  source /etc/csh/bindkey.d/$csh_bindkey
 endif
 
 unset csh_bindkey

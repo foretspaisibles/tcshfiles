@@ -446,12 +446,15 @@ setenv CLICOLOR yes
 # CSH RC Repository
 #
 
-if ( -d /etc/tcshrc.d ) then
-	foreach csh_file ( /etc/tcshrc.d/*.csh )
+if (-d /etc/csh/rc.d) then
+  if (`ls /etc/csh/rc.d` != "") then
+	foreach csh_file (/etc/csh/rc.d/*)
 		source $csh_file
 	end
 	unset csh_file
+  endif
 endif
+
 
 # Local Variables:
 # mode: shell-script

@@ -11,68 +11,68 @@
 #
 
 # INSERT: toggles overwrite or insert mode
-bindkey '' overwrite-mode
+bindkey '[2~' overwrite-mode
 
 # DELETE: delete char at cursor position
 # default behaviour
 
 # HOME: go to the beginning of the line
-bindkey '' beginning-of-line
+bindkey '[1~' beginning-of-line
 
 # END: go to the end of the line
-bindkey '' end-of-line
+bindkey '[4~' end-of-line
 
 # PAGE UP: search in history backwards for line beginning as current
-bindkey '' history-search-backward
+bindkey '[5~' history-search-backward
 
 # PAGE DOWN: search in history forwards for line beginning as current
-bindkey '' history-search-forward
+bindkey '[6~' history-search-forward
 
 # ESC-left-arrow: go to beginning of left word
-bindkey '' vi-word-back
+#bindkey '' vi-word-back
 
 # ESC-right-arrow: go to beginning of right word
-bindkey '' vi-word-fwd
+#bindkey '' vi-word-fwd
 
 # F1 : help on command currently typed
 #
 # Example: if 'ls passwd' is on your input line, help on 'ls'
-bindkey '' run-help
+bindkey '[[A' run-help
 
 # F2: set the mark command to cursor position
-bindkey '' set-mark-command 
+bindkey '[[B' set-mark-command 
 
 # F3: move cursor to the marked position
-bindkey '' exchange-point-and-mark 
+bindkey '[[C' exchange-point-and-mark 
 
 # F4: unbound
-bindkey '' undefined-key
+bindkey '[[D' undefined-key
 
 # F5: check line for spelling and make changes
-bindkey '' spell-line
+bindkey '[[E' spell-line
 
 # F6: check current word for spelling and make changes
-bindkey '' spell-word
+bindkey '[17~' spell-word
 
 # F7: do a ala-csh completion
-bindkey '' complete-word-raw
+bindkey '[18~' complete-word-raw
 
 # F8: insert last item of previous command
-bindkey '' insert-last-word
+bindkey '[19~' insert-last-word
 
 # F9: unbound
-bindkey '' undefined-key
+bindkey '[20~' undefined-key
 
 # F10: do an 'ls -l'
-bindkey -s ''  "^Uls -l\n"
+bindkey -s '[21~'  "^Uls -l\n"
 
 # F11: display load average and current process status
-bindkey '' load-average
+bindkey '[23~' load-average
 
 # F12: clear-screen
 # You may be in the middle of a command when you use this.
 # Does not affect what you are writing at the moment.
-bindkey '' clear-screen
+bindkey '[24~' clear-screen
 
 #
 # Advanced settings
@@ -80,7 +80,7 @@ bindkey '' clear-screen
 
 # Eazy edit of path, type Ctrl-X p
 #  (Thanks to Carlos Duarte <cgd@teleweb.pt>)
-bindkey -s '' '. `echo $path`^X*)^A^Dset path = ('
+bindkey -s 'p' '. `echo $path`^X*)^A^Dset path = ('
 
 # Ctrl-X *   Expand glob. example: ls *<^X*>  will expand the line
 # default behaviour

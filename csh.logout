@@ -17,6 +17,14 @@ if ( -x vidcontrol ) then
 endif
 clear
 
+if (-d /etc/csh/logout.d) then
+  if (`ls /etc/csh/logout.d` != "") then
+	foreach csh_file (/etc/csh/logout.d/*)
+		source $csh_file
+	end
+	unset csh_file
+  endif
+endif
 
 # Local Variables:
 # mode: shell-script
