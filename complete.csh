@@ -21,7 +21,7 @@ complete set \
 
 complete rm \
     'p/*/f:^*.{c,h,cc,C,tex,latex,ltx,man,y,ml,mli,mly,mll,text}/'
-
+    
 #
 # Developper
 #
@@ -29,8 +29,17 @@ complete rm \
 complete man \
     'p/*/c/'
 
+set _complete_make_words=( \
+    all depend build install clean realclean distclean dist \
+    subshell \
+    )
+
+alias _complete_make \
+    'echo $_complete_make_words; ls'
+
 complete make \
-    'p/*/(all depend build install clean realclean distclean dist)/'
+    'n/-f/f/' \
+    'p/*/`_complete_make`/' \
 
 
 #
@@ -45,12 +54,8 @@ complete dd \
 
 complete growisofs \
     'c/-/(M Z)/' \
-    'c/*=/f/' \
+    'c@*=@F:/dev@' \
     'n/-[ZM]/$_complete_growisofs_dvdrom/=/'
-
-#
-# Subversion
-#
 
 
 #
