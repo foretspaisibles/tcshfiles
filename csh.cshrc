@@ -92,28 +92,23 @@ endif
 # Du point de vue du masquage des programmes, la logique est la même
 # que pour les utilitaires du système.
 
-set -f path = ( $path $HOME/bin )
-set -f path = ( $path /bin )
-set -f path = ( $path /usr/bin )
-
-# On termine en ajoutant divers points d'installation de programmes.
-# Ces points sont rejetés à la fin du `path' et leur contenu ne masque
-# donc pas celui des autres points du `path'.
-
 foreach path_elt ( \
-	/usr/local/ssl/bin \
-	/usr/local/samba/bin \
-	/usr/local/java/bin \
-	/usr/texlive/bin \
-	/usr/games \
+	$HOME/bin \
+	/bin \
+	/usr/bin \
     /usr/local/bin \
 	/usr/local/sbin \
     /opt/local/bin \
 	/opt/local/sbin \
 	/usr/X11R6/bin \
+	/usr/local/ssl/bin \
+	/usr/local/samba/bin \
+	/usr/local/java/bin \
+	/usr/texlive/bin \
+	/usr/games \
 )
 	if ( -d $path_elt ) then
-		set -l path = ( $path $path_elt )
+		set -f path = ( $path $path_elt )
 	endif
 end
 
