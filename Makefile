@@ -12,6 +12,7 @@ CSHRC+= bindkey.csh
 CSHRC+= complete.csh
 CSHRC+= gnustep.csh
 CSHRC+= compat-i386.csh
+CSHRC+= lang.csh
 
 CSHBINDKEY+= bindkey.xterm
 CSHBINDKEY+= bindkey.cons25
