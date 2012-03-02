@@ -127,10 +127,10 @@ alias _complete_git_alias \
     'git config --get-regexp "alias.*" | sed -n "s@alias\.\([^ ]*\).*@\1@p"'
 
 alias _complete_git_branch \
-    'git for-each-ref --format="%(refname)" refs/heads refs/remotes | sed -e s@refs/remotes/@@ -e s@refs/heads/@@'
+    'git for-each-ref --format="%(refname)" refs/heads refs/remotes | sed -e "s@refs/remotes/@@" -e "s@refs/heads/@@"'
 
 alias _complete_git_origin_branch \
-    'git for-each-ref --format="%(refname)" refs/remotes/origin | sed -n -e "@HEAD@d" -e "s@refs/remotes/origin/@@"'
+    'git for-each-ref --format="%(refname)" refs/remotes/origin | sed -n -e "/HEAD/d" -e "s@refs/remotes/origin/@@"'
 
 alias _complete_git_command \
     '_complete_git_alias | xargs echo $_complete_git_words'
