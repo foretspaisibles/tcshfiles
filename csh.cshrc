@@ -130,7 +130,10 @@ unset path_elt
 # `pwd_tail' fait apparaître le dernier élément du ``path to working
 # directory''. 
 
-set prompt = "%B[%h]%b (%m) %c %B%#%b "
+set _prompt_scm_branch = ''
+set prompt = '%B[%h]%b (%m) %c%${_prompt_scm_branch} %B%#%b '
+
+alias _prompt_scm_branch_precmd 'set _prompt_scm_branch=`sh /etc/csh/tool.d/scm_prompt_make.sh`'
 
 
 # Lorsque le shell attend le contenu de boucles `for' `while' etc., il
@@ -140,14 +143,14 @@ set prompt2="%R?"
 
 
 # Lorsque le shell attend un élément de correction pour une commande
-# mal tapée, il utilise un indicateur 'XXX'.
+# mal tapée, il utilise un indicateur 'Correct>'.
 #
 # Correct????
 # 	y: yes, n: no, e: edit
 # 	<SPACE>: yes
 # 	<ENTER>: no
 
-set prompt3="Correct > %B%R%b (y|n|e)?"
+set prompt3="Correct> %B%R%b (y|n|e)?"
 
 
 #
@@ -332,9 +335,9 @@ alias helpcommand man
 # Exemple:
 #
 #   alias precmd date
+#	alias precmd _prompt_scm_branch_precmd
 
 unalias precmd
-
 
 # Le deuxième de ces mécanismes permet l'éxécution périodique d'une
 # commande. La période est déterminée par la variable `tperiod' et

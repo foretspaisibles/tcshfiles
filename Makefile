@@ -18,6 +18,8 @@ CSHBINDKEY+= bindkey.xterm
 CSHBINDKEY+= bindkey.cons25
 CSHBINDKEY+= bindkey.linux
 
+CSHTOOL+= scm_prompt_make.sh
+
 .include "conf.tcsh.mk"
 
 ### End of file `Makefile'
