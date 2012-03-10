@@ -1,6 +1,6 @@
 ### csh.cshrc -- TCSH Resource Configuration Script
 
-# Author: Michaël Grünewald
+# Author: MichaÃ«l GrÃ¼newald
 # Date: Ven 26 jan 2007 19:32:47 CET
 # Lang: fr_FR.ISO8859-15
 
@@ -8,18 +8,18 @@
 
 
 # Le shell TCSH lit plusieurs fichiers d'initialisation dans le
-# répertoire de l'utilisateur. Le mécanisme complet est détaillé dans
+# rÃ©pertoire de l'utilisateur. Le mÃ©canisme complet est dÃ©taillÃ© dans
 # la page de manuel tcsh(1), dans la section ``Startup and shutdown''.
 #
 # Parmi ces fichiers d'initialisation figure le fichier `dot.tcsh'. Ce
 # fichier est lu par tous les processus shell, les shells de connexion
-# comme les shells crées ultérieurement (par exemple dans une session
+# comme les shells crÃ©es ultÃ©rieurement (par exemple dans une session
 # X).
 #
 # SeeAlso: tcsh(1), environ(7).
 
-# Remarque: une grande partie du matériel apparaissant dans ce fichier
-#  est adapté des propositions du projet TCSHRC publiées sur
+# Remarque: une grande partie du matÃ©riel apparaissant dans ce fichier
+#  est adaptÃ© des propositions du projet TCSHRC publiÃ©es sur
 #  `http://tcshrc.sourceforge.net'. On peut consulter cette URL pour y
 #  trouver de nombreuses autres propositions pour la configuration du
 #  c-shell.
@@ -29,22 +29,22 @@
 # Echo style
 #
 
-# La primitive `echo' du c-shell peut être paramétrée pour simuler la
-# commande `echo' de quelques systèmes. Le paramètre `echo_style'
-# indique au c-shell quel doit être le comportement de la primitive
+# La primitive `echo' du c-shell peut Ãªtre paramÃ©trÃ©e pour simuler la
+# commande `echo' de quelques systÃ¨mes. Le paramÃ¨tre `echo_style'
+# indique au c-shell quel doit Ãªtre le comportement de la primitive
 # `echo'.
 #
-# Les valeurs possibles sont discutées dans le manuel du c-shell, il
+# Les valeurs possibles sont discutÃ©es dans le manuel du c-shell, il
 # peut s'agir de
 #
 #   both, bsd, sysv, etc.
 #
 # Nous utilisons la valeur `both' de sorte que la commande `echo'
-# interprète les séquences d'échappement.
+# interprÃ¨te les sÃ©quences d'Ã©chappement.
 #
-# D'autres paramètres d'initialisation du c-shell font l'hypothèse que
-# les séquences d'échappement sont interprétés par la primitive
-# `echo'. C'est notamment le cas des paramètres modifiant le titre du
+# D'autres paramÃ¨tres d'initialisation du c-shell font l'hypothÃ¨se que
+# les sÃ©quences d'Ã©chappement sont interprÃ©tÃ©s par la primitive
+# `echo'. C'est notamment le cas des paramÃ¨tres modifiant le titre du
 # shell.
 
 set echo_style=both
@@ -54,24 +54,24 @@ set echo_style=both
 # Path
 #
 
-# La variable spéciale `path' est utilisée par le shell pour
-# rechercher les programmes dont l'éxécution est commandée par
+# La variable spÃ©ciale `path' est utilisÃ©e par le shell pour
+# rechercher les programmes dont l'Ã©xÃ©cution est commandÃ©e par
 # l'utilisateur.
 #
 # Pour initialiser cette variable, on utilise les formes `set -l'
 # (last) et `set -f' (first) de la primitive `set'. Les modificateurs
 # `l' et `f' demandent la suppression des doublons dans la valeur
-# affectée. Lors de la suppression des doublons, la première occurence
-# est conservée lorsque le modificateur `-f' est utilisé, la dernière
-# occurence est conservée lorsque le mdoificateur `-l' est utilisé.
+# affectÃ©e. Lors de la suppression des doublons, la premiÃ¨re occurence
+# est conservÃ©e lorsque le modificateur `-f' est utilisÃ©, la derniÃ¨re
+# occurence est conservÃ©e lorsque le mdoificateur `-l' est utilisÃ©.
 
 # Les modifications suivantes concernent uniquement le compte `root'.
-# Après évaluation des commandes suivantes, les dossiers $HOME/bin,
-# /sbin, /usr/sbin, /usr/local/sbin sont examinés dans cet
+# AprÃ¨s Ã©valuation des commandes suivantes, les dossiers $HOME/bin,
+# /sbin, /usr/sbin, /usr/local/sbin sont examinÃ©s dans cet
 # ordre. Ainsi les programmes dans `/root/bin' peuvent cacher les
-# programmes du système mais les programmes installé par les ports ou
+# programmes du systÃ¨me mais les programmes installÃ© par les ports ou
 # d'autres sources, vers la racine `/usr/local', ne masquent jamais
-# les utilitaires du système.
+# les utilitaires du systÃ¨me.
  
 if ($LOGNAME == "root") then
 	set -f path = ( $path $HOME/bin )
@@ -88,9 +88,9 @@ if ($LOGNAME == "root") then
 	end
 endif
 
-# Les modifications suivantes concernent tous les comptes du système.
-# Du point de vue du masquage des programmes, la logique est la même
-# que pour les utilitaires du système.
+# Les modifications suivantes concernent tous les comptes du systÃ¨me.
+# Du point de vue du masquage des programmes, la logique est la mÃªme
+# que pour les utilitaires du systÃ¨me.
 
 foreach path_elt ( \
 	$HOME/bin \
@@ -119,17 +119,17 @@ unset path_elt
 # Prompt
 #
 
-# Cette section paramètre les indicateurs de la ligne de commande et
-# le titre du terminal. Le titre est notamment utilisé par les
-# émulateurs de terminaux du système X Windows.
+# Cette section paramÃ¨tre les indicateurs de la ligne de commande et
+# le titre du terminal. Le titre est notamment utilisÃ© par les
+# Ã©mulateurs de terminaux du systÃ¨me X Windows.
 
 # On modifie les indicateurs de demande de commande. L'indicateur
-# principal ressemble à:
+# principal ressemble Ã :
 #
 #  [13] (host) pwd_tail >
 #
-# Le caractère `>' est remplacé par `#' pour 'utilisateur root, et
-# `pwd_tail' fait apparaître le dernier élément du ``path to working
+# Le caractÃ¨re `>' est remplacÃ© par `#' pour 'utilisateur root, et
+# `pwd_tail' fait apparaÃ®tre le dernier Ã©lÃ©ment du ``path to working
 # directory''. 
 
 set prompt = "%B[%h]%b (%m) %c %B%#%b "
@@ -141,8 +141,8 @@ set prompt = "%B[%h]%b (%m) %c %B%#%b "
 set prompt2="%R?"
 
 
-# Lorsque le shell attend un élément de correction pour une commande
-# mal tapée, il utilise un indicateur 'XXX'.
+# Lorsque le shell attend un Ã©lÃ©ment de correction pour une commande
+# mal tapÃ©e, il utilise un indicateur 'XXX'.
 #
 # Correct????
 # 	y: yes, n: no, e: edit
@@ -156,23 +156,23 @@ set prompt3="Correct > %B%R%b (y|n|e)?"
 # Historique des commandes
 #
 
-# La taille de l'historique est controlée par la valeur de
-# `history'. Les mécanismes de l'historique des commandes peuvent être
-# utilisés pour utiliser les commandes précédentes comme paramètres de
+# La taille de l'historique est controlÃ©e par la valeur de
+# `history'. Les mÃ©canismes de l'historique des commandes peuvent Ãªtre
+# utilisÃ©s pour utiliser les commandes prÃ©cÃ©dentes comme paramÃ¨tres de
 # nouvelles commandes.
 #
 # L'utilisation la plus simple de l'historique est le simple rappel
-# des commandes précédentes.
+# des commandes prÃ©cÃ©dentes.
 
 set history=999
 
 
-# La variable `histfile' contrôle le nom du fichier enregistré pour
-# l'historique. Si cette variable n'est pas définie, aucun fichier
-# d'historique n'est enregistré.
+# La variable `histfile' contrÃ´le le nom du fichier enregistrÃ© pour
+# l'historique. Si cette variable n'est pas dÃ©finie, aucun fichier
+# d'historique n'est enregistrÃ©.
 #
-# Si vous ne souhaitez pas que soit enregistrée l'historique d'une
-# session, faites apparaître la commande suivante dans le fichier
+# Si vous ne souhaitez pas que soit enregistrÃ©e l'historique d'une
+# session, faites apparaÃ®tre la commande suivante dans le fichier
 # d'initialisation.
 #
 # unset histfile
@@ -182,26 +182,26 @@ set history=999
 # Interaction avec le C-shell
 #
 
-# De nombreux paramètres permettent de modifier le comportement du
-# C-shell. On passe ici en revue une partie de ces paramètres avec une
+# De nombreux paramÃ¨tres permettent de modifier le comportement du
+# C-shell. On passe ici en revue une partie de ces paramÃ¨tres avec une
 # courte explication.
 #
-# La liste complète de ces paramètes et des explications plus
-# détaillées figurent dans la page de manuel tcsh(1).
+# La liste complÃ¨te de ces paramÃ¨tes et des explications plus
+# dÃ©taillÃ©es figurent dans la page de manuel tcsh(1).
 
-# Le c-shell peut vous informer des connexions et des déconnexions des
-# utilisateurs du système.
+# Le c-shell peut vous informer des connexions et des dÃ©connexions des
+# utilisateurs du systÃ¨me.
 #
-# Deux variables du shell sont mises en jeu dans ce mécanisme:
-#  - la variable `watch' qui spécifie quelles utilisateurs et quelles
+# Deux variables du shell sont mises en jeu dans ce mÃ©canisme:
+#  - la variable `watch' qui spÃ©cifie quelles utilisateurs et quelles
 #    consoles surveiller;
-#  - la variable `who' qui contrôle le format des rapports.
+#  - la variable `who' qui contrÃ´le le format des rapports.
 #
-# La variable `who' doit être modifiée pour tenir compte de la
-# langue, pour chaque utilisateur (le mot `%a' est un paramètre
-# régional).
+# La variable `who' doit Ãªtre modifiÃ©e pour tenir compte de la
+# langue, pour chaque utilisateur (le mot `%a' est un paramÃ¨tre
+# rÃ©gional).
 #
-# De plus amples détails sont donnés dans la section `Special shell
+# De plus amples dÃ©tails sont donnÃ©s dans la section `Special shell
 # variables' du manuel tcsh(1).
 #
 #set watch=(0 any any)
@@ -214,22 +214,22 @@ set history=999
 set inputmode=insert
 
 
-# On demande au c-shell d'afficher les possibilités de complétion de
+# On demande au c-shell d'afficher les possibilitÃ©s de complÃ©tion de
 # la ligne de commande lorque plusieurs d'entre elles sont
-# possibles. Il est donc facile de voir combien de caractères sont
-# nécessaires pour lever toute ambiguité sur la commande en cours de
+# possibles. Il est donc facile de voir combien de caractÃ¨res sont
+# nÃ©cessaires pour lever toute ambiguitÃ© sur la commande en cours de
 # saisie.
 #
-# Ce réglage épargne de nombreuses utilisations de `^D'.
+# Ce rÃ©glage Ã©pargne de nombreuses utilisations de `^D'.
 
 set autolist
 
 
-# Le c-shell a des capacités dans le domaine de l'autocorrection et de
-# la complétion automatique. Ces capcités sont limitées et marquées
-# par l'empreinte de la stupidité artificielle. Nous les activons
-# toutes ci-dessous, l'effet particulier de chacun de ces règlages est
-# décrit dans le manuel tcsh(1), à la section ``Special shell
+# Le c-shell a des capacitÃ©s dans le domaine de l'autocorrection et de
+# la complÃ©tion automatique. Ces capcitÃ©s sont limitÃ©es et marquÃ©es
+# par l'empreinte de la stupiditÃ© artificielle. Nous les activons
+# toutes ci-dessous, l'effet particulier de chacun de ces rÃ¨glages est
+# dÃ©crit dans le manuel tcsh(1), Ã  la section ``Special shell
 # variables''.
 
 set autocorrect
@@ -240,17 +240,17 @@ set symlinks=chase
 
 
 # On peut demander au c-shell de terminer automatiquement la session
-# en cas d'inactivité prolongée.
+# en cas d'inactivitÃ© prolongÃ©e.
 #
 # La liaison `set autologout=3' termine automatiquement la session
-# après trois minutes d'inactivité.
+# aprÃ¨s trois minutes d'inactivitÃ©.
 #
-# Nous désactivons cette fonctionnalité.
+# Nous dÃ©sactivons cette fonctionnalitÃ©.
 
 unset autologout
 
 
-# Après l'envoi du signal SIGSTOP (^Z) à un processus, le c-shell
+# AprÃ¨s l'envoi du signal SIGSTOP (^Z) Ã  un processus, le c-shell
 # affiche autmatiquement la liste des travaux suspendus. Cette
 # information est utile au ``job-management''.
 
@@ -260,39 +260,39 @@ set listjobs
 # Nous demandons au c-shell d'afficher les codes de terminaison des
 # processus.
 #
-# C'est un règlage appréicable lors de la mise au point de scripts
+# C'est un rÃ¨glage apprÃ©icable lors de la mise au point de scripts
 # shell.
 
 set printexitvalue
 
 
 # Demande confirmation avant de valider la commande `rm *'. C'est un
-# filet de sécurité parfois apprécié.
+# filet de sÃ©curitÃ© parfois apprÃ©ciÃ©.
 
 set rmstar
 
 
 # La liste `fignore' a pour membres des ``globbing patterns'' servant
-# à filtrer les fichiers inintéressants du point de vue de la
-# complétion automatique.
+# Ã  filtrer les fichiers inintÃ©ressants du point de vue de la
+# complÃ©tion automatique.
 #
-# En règle générale les fichiers impertinents pour la complétion sont
+# En rÃ¨gle gÃ©nÃ©rale les fichiers impertinents pour la complÃ©tion sont
 # des fichiers objet, produits par un compilateur. 
 #
 # set fignore=(.o)
 
 
-# La variable `time' peut être utilisée pour afficher des statistiques
-# sur les commandes dont le temps d'éxécution est important.
+# La variable `time' peut Ãªtre utilisÃ©e pour afficher des statistiques
+# sur les commandes dont le temps d'Ã©xÃ©cution est important.
 #
 # Remarques:
 #
 #  1. Ici important signifie plus de 8 secondes.
-#  2. Les ``page faults'' font partie des mécanismes de gestion de
-#     mémoire virtuelle, une ``page fault'' est normalement suivie
-#     d'un accès à la mémoire ``swappée'' sur le disque.
-#  3. Le manuel tcsh(1) décrit les valeurs que peut prendre la
-#     variable spéciale `time'.
+#  2. Les ``page faults'' font partie des mÃ©canismes de gestion de
+#     mÃ©moire virtuelle, une ``page fault'' est normalement suivie
+#     d'un accÃ¨s Ã  la mÃ©moire ``swappÃ©e'' sur le disque.
+#  3. Le manuel tcsh(1) dÃ©crit les valeurs que peut prendre la
+#     variable spÃ©ciale `time'.
 
 set time=(8 "\
 Time spent in user mode   (CPU seconds) : %Us\
@@ -304,14 +304,14 @@ Times of major page faults              : %F\
 Times of minor page faults              : %R")
 
 
-# Si la variable `mail' pointe vers votre boîte à lettre, le c-shell
-# vous informe de l'arrivée de nouveaux courriers.
+# Si la variable `mail' pointe vers votre boÃ®te Ã  lettre, le c-shell
+# vous informe de l'arrivÃ©e de nouveaux courriers.
 
 set mail = (/var/mail/$USER)
 
 
-# La commande d'aide `helpcommand' est appelée sur le mot courant
-# lorsque `F1' est pressée.
+# La commande d'aide `helpcommand' est appelÃ©e sur le mot courant
+# lorsque `F1' est pressÃ©e.
 #
 # Exemple:
 #
@@ -321,14 +321,14 @@ alias helpcommand man
 
 
 #
-# Éxécution automatique de commandes
+# Ã‰xÃ©cution automatique de commandes
 #
 
-# Le c-shell propose plusieurs mécanismes permettant l'éxécution
+# Le c-shell propose plusieurs mÃ©canismes permettant l'Ã©xÃ©cution
 # automatique de commandes.
 
-# Le premier de ces mécanismes est l'alias spécial `precmd'. Lorsque
-# celui-ci est défini, le texte de remplacement de `precmd' est évalué
+# Le premier de ces mÃ©canismes est l'alias spÃ©cial `precmd'. Lorsque
+# celui-ci est dÃ©fini, le texte de remplacement de `precmd' est Ã©valuÃ©
 # avant chaque affichage du prompt.
 #
 # Exemple:
@@ -338,30 +338,30 @@ alias helpcommand man
 unalias precmd
 
 
-# Le deuxième de ces mécanismes permet l'éxécution périodique d'une
-# commande. La période est déterminée par la variable `tperiod' et
-# l'action périodique par l'alias `periodic'.
+# Le deuxiÃ¨me de ces mÃ©canismes permet l'Ã©xÃ©cution pÃ©riodique d'une
+# commande. La pÃ©riode est dÃ©terminÃ©e par la variable `tperiod' et
+# l'action pÃ©riodique par l'alias `periodic'.
 #
 # Exemple:
 #
-#  set period 2s # une période de 2 secondes
+#  set period 2s # une pÃ©riode de 2 secondes
 #  alias periodic 'tput bel'
 
 unset tperiod
 unalias periodic
 
 
-# Le dernier de ces mécanismes est un planifacteur qui permet
-# l'éxécution différée de commandes.
+# Le dernier de ces mÃ©canismes est un planifacteur qui permet
+# l'Ã©xÃ©cution diffÃ©rÃ©e de commandes.
 #
 # On peut utiliser ce planificateur pour rappeler des rendez-vous,
 # etc.
 #
 # Remarque:
 #
-#  Le démon `atd' peut être utilisé pour planifier l'éxécution de
-#  taches à une date particulière (cf. at(1)). Le démon `crond' peut
-#  être utilisé pour planifier l'éxécution périodique de taches
+#  Le dÃ©mon `atd' peut Ãªtre utilisÃ© pour planifier l'Ã©xÃ©cution de
+#  taches Ã  une date particuliÃ¨re (cf. at(1)). Le dÃ©mon `crond' peut
+#  Ãªtre utilisÃ© pour planifier l'Ã©xÃ©cution pÃ©riodique de taches
 #  (cf. crontab(1)).
 #
 # Exemple:
@@ -375,10 +375,10 @@ unalias periodic
 #
 
 # Les alias suivants modifient les commandes `cp' et `mv' pour
-# qu'elles demandent confirmation avant de détruire des fichiers.
-# Cette protection contre l'effacement de fichiers peut aussi être
-# activée pour la commande `rm' mais certains la trouvent ennuyeuse
-# car `rm' sert précisément à effacer des fichiers.
+# qu'elles demandent confirmation avant de dÃ©truire des fichiers.
+# Cette protection contre l'effacement de fichiers peut aussi Ãªtre
+# activÃ©e pour la commande `rm' mais certains la trouvent ennuyeuse
+# car `rm' sert prÃ©cisÃ©ment Ã  effacer des fichiers.
 
 alias rm 'rm -i'
 alias cp 'cp -i'
@@ -394,8 +394,8 @@ alias lh    ls -lAh
 
 
 # Pratique: saisissez `ff test.c' pour trouver le fichier `test.c'. 
-# Si la base de donnée de `locate' est suffisamment récente, il est en
-# général plus rapide d'utiliser `locate test.c'.
+# Si la base de donnÃ©e de `locate' est suffisamment rÃ©cente, il est en
+# gÃ©nÃ©ral plus rapide d'utiliser `locate test.c'.
 
 alias ff    	'find . -name $*'
 
@@ -410,16 +410,16 @@ alias j		jobs -l
 # Masque de permission pour les nouveaux fichiers
 #
 
-# Masque de permissions pour la création de fichiers. Le paramètre
-# `umask' de l'utilisateur est utilisé lors de chaque création de
-# fichier, les bits de permission présents dans le paramètre sont
-# effacés dans les permissions du fichier. Pour un utilisateur
-# ordinaire, un attribut `umask' de 027 interdit l'accès à tous les
-# fichiers ainsi qu'aux répertoires pour les utilisateurs `others',
-# autorise la lecture des fichiers et le parcours des répertoires pour
-# les membres du groupe propriétaire du fichier et autorise
-# l'utilisateur à lire et écrire ses propres fichiers, ainsi qu'à
-# parcourir ses répertoires. Un attribut `umask' 022 est préconisé
+# Masque de permissions pour la crÃ©ation de fichiers. Le paramÃ¨tre
+# `umask' de l'utilisateur est utilisÃ© lors de chaque crÃ©ation de
+# fichier, les bits de permission prÃ©sents dans le paramÃ¨tre sont
+# effacÃ©s dans les permissions du fichier. Pour un utilisateur
+# ordinaire, un attribut `umask' de 027 interdit l'accÃ¨s Ã  tous les
+# fichiers ainsi qu'aux rÃ©pertoires pour les utilisateurs `others',
+# autorise la lecture des fichiers et le parcours des rÃ©pertoires pour
+# les membres du groupe propriÃ©taire du fichier et autorise
+# l'utilisateur Ã  lire et Ã©crire ses propres fichiers, ainsi qu'Ã 
+# parcourir ses rÃ©pertoires. Un attribut `umask' 022 est prÃ©conisÃ©
 # pour l'utilisateur root, du moins pendant l'installation des
 # logiciles, autrement les utilisateurs pourraient ne plus pouvoir
 # utiliser certains programmes.

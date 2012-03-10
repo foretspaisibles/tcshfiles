@@ -1,11 +1,11 @@
-2008-05-08  Michaël Grünewald  <michael@Llea.celt.neu>
+2008-05-08  MichaÃ«l GrÃ¼newald  <michael@Llea.celt.neu>
 
-	* csh.bindkey.bsd: Renommé en csh.bindkey.cons25, car le suffixe
-	doit être le nom du terminal (utiliser le nom du suffixe pour l'OS
+	* csh.bindkey.bsd: RenommÃ© en csh.bindkey.cons25, car le suffixe
+	doit Ãªtre le nom du terminal (utiliser le nom du suffixe pour l'OS
 	est absurde).
 
-2008-05-08  Michaël Grünewald  <michael@Llea.celt.neu>
+2008-05-08  MichaÃ«l GrÃ¼newald  <michael@Llea.celt.neu>
 
-	* csh.bindkey.darwin: Effacé, le terminal de Mac OS X proclame
-	être `xterm-color'.
+	* csh.bindkey.darwin: EffacÃ©, le terminal de Mac OS X proclame
+	Ãªtre `xterm-color'.
 

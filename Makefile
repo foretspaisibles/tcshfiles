@@ -2,7 +2,7 @@
 
 PROJECT = tcshfiles
 VERSION = 1.0
-AUTHOR = Michaël Grünewald
+AUTHOR = MichaÃ«l GrÃ¼newald
 
 CSH = csh.cshrc
 CSH+= csh.login

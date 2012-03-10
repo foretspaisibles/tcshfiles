@@ -1,15 +1,15 @@
 #! /bin/csh -f
 ### csh.bindkey -- Laisons des focntions de TCSDH au clavier
 
-# Author: Michaël Grünewald
+# Author: MichaÃ«l GrÃ¼newald
 # Date: Ven 18 jan 2008 21:16:42 CET
 # Lang: fr_FR.ISO8859-15
 
 # $Id$
 
-# Ce fichier ananlyse la variable OSTYPE pour déteminer le fichier de
-# définitions à ingurgiter. Il paraît plus pertinent de tester la
-# valeur du terminal, mais ce code adapte le fichier distribué par
+# Ce fichier ananlyse la variable OSTYPE pour dÃ©teminer le fichier de
+# dÃ©finitions Ã  ingurgiter. Il paraÃ®t plus pertinent de tester la
+# valeur du terminal, mais ce code adapte le fichier distribuÃ© par
 # Simos Xenitellis.
 
 # Enveloppe originale:

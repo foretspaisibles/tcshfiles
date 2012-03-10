@@ -1,6 +1,6 @@
 ### csh.complete
 
-# Author: Michaël Grünewald
+# Author: MichaÃ«l GrÃ¼newald
 # Date: Ven 18 jan 2008 23:30:17 CET
 # Lang: fr_FR.ISO8859-15
 
