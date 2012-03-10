@@ -203,6 +203,7 @@ complete atacontrol \
 
 complete mount \
     'n/-t/$_complete_mount_fstype/' \
+    'C@/dev@f@' \
     'p/1/`_complete_mount_points`/' \
     'p/*/f/'
 
