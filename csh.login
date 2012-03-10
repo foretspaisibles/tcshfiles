@@ -1,10 +1,9 @@
-### csh.login -- TCSH Login Script
+### csh.login — TCSH Login Script
 
 # Author: Michaël Grünewald
 # Date: Ven 26 jan 2007 19:32:47 CET
 # Lang: fr_FR.ISO8859-15
 
-# $Id$
 
 # Les commandes figurant dans ce fichier sont évaluées par tcsh(1) au
 # début d'une session de login, après après le fichier

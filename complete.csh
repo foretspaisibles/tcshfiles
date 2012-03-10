@@ -1,10 +1,8 @@
-### csh.complete
+### csh.complete — Completion for TCSH
 
 # Author: Michaël Grünewald
 # Date: Ven 18 jan 2008 23:30:17 CET
 # Lang: fr_FR.ISO8859-15
-
-# $Id$
 
 #
 # Shell commands

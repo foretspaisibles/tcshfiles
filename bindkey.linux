@@ -1,10 +1,8 @@
-### csh.bindkey.linux -- Liaisons des touches dans une console LINUX
+### csh.bindkey.linux — Liaisons des touches dans une console LINUX
 
 # Author: Michaël Grünewald
 # Date: Ven 18 jan 2008 21:16:42 CET
 # Lang: fr_FR.ISO8859-15
-
-# $Id$
 
 #
 # Basic settings

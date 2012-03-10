@@ -1,10 +1,8 @@
-### csh.cshrc -- TCSH Resource Configuration Script
+### csh.cshrc — TCSH Resource Configuration Script
 
 # Author: Michaël Grünewald
 # Date: Ven 26 jan 2007 19:32:47 CET
 # Lang: fr_FR.ISO8859-15
-
-# $Id$
 
 
 # Le shell TCSH lit plusieurs fichiers d'initialisation dans le
