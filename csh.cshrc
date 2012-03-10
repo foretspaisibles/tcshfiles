@@ -130,11 +130,15 @@ unset path_elt
 # `pwd_tail' fait apparaître le dernier élément du ``path to working
 # directory''. 
 
-set _prompt_scm_branch = ''
-set prompt = '%B[%h]%b (%m) %c%${_prompt_scm_branch} %B%#%b '
+set prompt_scm_branch = ''
+set prompt = '%B[%h]%b (%m) %c%{\033[2m%}%${prompt_scm_branch}%{\033[0m%} %B%#%b '
 
-alias _prompt_scm_branch_precmd 'set _prompt_scm_branch=`sh /etc/csh/tool.d/scm_prompt_make.sh`'
-
+alias _prompt_scm_branch_precmd '\\
+set prompt_scm_branch = `sh /etc/csh/tool.d/scm_prompt_make.sh`;\\
+if ( $#prompt_scm_branch > 0) then;\\
+    set prompt_scm_branch = "/${prompt_scm_branch}";\\
+endif;\\
+'
 
 # Lorsque le shell attend le contenu de boucles `for' `while' etc., il
 # utilise un indicateur 'for?', 'while?', etc.
