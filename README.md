@@ -21,4 +21,4 @@ It will overwrite the system scripts `csh.login`, `csh.logout` and
 To install these scripts, download the latest tarball, explode it and
 issue a `make install` in the toplevel directory.
 
-Michael Grünewald in Bonn, on February 27, 2014
+Michael Grünewald in Bonn, on  Thursday 27, 2014
