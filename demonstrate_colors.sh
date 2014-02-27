@@ -2,7 +2,7 @@ effect_db()
 {
     cat <<EOF
 0 	Normal
-1 	Bright or Bold 	
+1 	Bright or Bold
 2 	Faint
 3 	Italic
 4 	Underline
@@ -17,7 +17,7 @@ EOF
 effect_short_db()
 {
     cat <<EOF
-1 	Bright or Bold 	
+1 	Bright or Bold
 2 	Faint
 3 	Italic
 EOF

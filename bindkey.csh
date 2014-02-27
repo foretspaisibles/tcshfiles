@@ -1,8 +1,7 @@
-### csh.bindkey — Laisons des fonctions de TCSH au clavier
+### csh.bindkey -- Laisons des fonctions de TCSH au clavier
 
-# Author: Michaël Grünewald
+# Author: Michael Grünewald
 # Date: Ven 18 jan 2008 21:16:42 CET
-# Lang: fr_FR.ISO8859-15
 
 # Ce fichier ananlyse la variable OSTYPE pour déteminer le fichier de
 # définitions à ingurgiter. Il paraît plus pertinent de tester la

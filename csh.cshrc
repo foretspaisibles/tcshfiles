@@ -1,8 +1,7 @@
-### csh.cshrc — TCSH Resource Configuration Script
+### csh.cshrc -- TCSH Resource Configuration Script
 
-# Author: Michaël Grünewald
+# Author: Michael Grünewald
 # Date: Ven 26 jan 2007 19:32:47 CET
-# Lang: fr_FR.ISO8859-15
 
 
 # Le shell TCSH lit plusieurs fichiers d'initialisation dans le
@@ -70,7 +69,7 @@ set echo_style=both
 # programmes du système mais les programmes installé par les ports ou
 # d'autres sources, vers la racine `/usr/local', ne masquent jamais
 # les utilitaires du système.
- 
+
 if ($LOGNAME == "root") then
 	set -f path = ( $path $HOME/bin )
 	set -f path = ( $path /sbin )
@@ -128,7 +127,7 @@ unset path_elt
 #
 # Le caractère `>' est remplacé par `#' pour 'utilisateur root, et
 # `pwd_tail' fait apparaître le dernier élément du ``path to working
-# directory''. 
+# directory''.
 
 set prompt_scm_branch = ''
 set prompt = '%B[%h]%b (%m) %c%{\033[2m%}%${prompt_scm_branch}%{\033[0m%} %B%#%b '
@@ -279,7 +278,7 @@ set rmstar
 # complétion automatique.
 #
 # En règle générale les fichiers impertinents pour la complétion sont
-# des fichiers objet, produits par un compilateur. 
+# des fichiers objet, produits par un compilateur.
 #
 # set fignore=(.o)
 
@@ -395,7 +394,7 @@ alias ll	ls -lA
 alias lh    ls -lAh
 
 
-# Pratique: saisissez `ff test.c' pour trouver le fichier `test.c'. 
+# Pratique: saisissez `ff test.c' pour trouver le fichier `test.c'.
 # Si la base de donnée de `locate' est suffisamment récente, il est en
 # général plus rapide d'utiliser `locate test.c'.
 

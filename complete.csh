@@ -1,8 +1,7 @@
-### csh.complete — Completion for TCSH
+### csh.complete -- Completion for TCSH
 
-# Author: Michaël Grünewald
+# Author: Michael Grünewald
 # Date: Ven 18 jan 2008 23:30:17 CET
-# Lang: fr_FR.ISO8859-15
 
 #
 # Shell commands
@@ -19,7 +18,7 @@ complete set \
 
 complete rm \
     'p/*/f:^*.{c,h,cc,C,tex,latex,ltx,man,y,ml,mli,mly,mll,text}/'
-    
+
 #
 # Developper
 #
@@ -157,8 +156,6 @@ complete git \
     'N/remote/`git remote`/' \
     'n/checkout/`_complete_git_branch | xargs echo -b --`/' \
     'N/-b/`_complete_git_branch`/'
-
-    
 
 
 #

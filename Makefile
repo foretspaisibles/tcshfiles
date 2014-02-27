@@ -1,8 +1,8 @@
 ### Makefile
 
 PROJECT = tcshfiles
+AUTHOR = Michael Grünewald
 VERSION = 1.0
-AUTHOR = Michaël Grünewald
 
 CSH = csh.cshrc
 CSH+= csh.login

@@ -1,4 +1,4 @@
-### admin.files.mk — Install administration files
+### admin.files.mk -- Install administration files
 
 PREFIX?=
 

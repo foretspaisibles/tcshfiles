@@ -1,8 +1,7 @@
-### csh.bindkey.bsd — Liaisons des touches dans une console BSD
+### csh.bindkey.bsd -- Liaisons des touches dans une console BSD
 
-# Author: Michaël Grünewald
+# Author: Michael Grünewald
 # Date: Ven 18 jan 2008 21:16:42 CET
-# Lang: fr_FR.ISO8859-15
 
 #
 # Basic settings
@@ -39,10 +38,10 @@ bindkey '^[^[[C' vi-word-fwd
 bindkey '^[[M' run-help
 
 # F2: set the mark command to cursor position
-bindkey '^[[N' set-mark-command 
+bindkey '^[[N' set-mark-command
 
 # F3: move cursor to the marked position
-bindkey '^[[O' exchange-point-and-mark 
+bindkey '^[[O' exchange-point-and-mark
 
 # F4: unbound
 bindkey '^[[P' undefined-key
