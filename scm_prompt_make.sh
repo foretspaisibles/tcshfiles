@@ -18,7 +18,7 @@ has_program()
 prompt()
 {
     if has_program git; then
-	git status 2>&- | sed -n '1s/^# On branch //p'
+	git status 2>&- | sed -n '1s/^.*On branch //p'
     fi
 }
 
