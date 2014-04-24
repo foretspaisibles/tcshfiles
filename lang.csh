@@ -14,7 +14,9 @@
 # are also available at
 # http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt
 
-if ( "$TERM" == "cons25" ) then
+if ( $?TERM ) then
+    if ( "$TERM" == "cons25" ) then
 	setenv LANG 'fr_FR.ISO8859-15'
 	setenv CHARSET 'ISO8859-15'
+    endif
 endif
