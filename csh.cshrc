@@ -140,7 +140,7 @@ unset path_elt
 # directory''.
 
 set prompt_scm_branch = ''
-set prompt = '%B[%h]%b (%m) %c%{\033[2m%}%${prompt_scm_branch}%{\033[0m%} %B%#%b '
+set prompt = '%B[%h]%b (%m) %c%{\033[37m%}%${prompt_scm_branch}%{\033[m%} %B%#%b '
 
 alias _prompt_scm_branch_precmd '\\
 set prompt_scm_branch = `sh /etc/csh/tool.d/scm_prompt_make.sh`;\\

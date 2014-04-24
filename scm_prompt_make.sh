@@ -11,7 +11,7 @@
 
 has_program()
 {
-    command -v "$1" 1>&- 2>&-
+    command -v "$1" 2>&- > /dev/null
     return $?
 }
 
