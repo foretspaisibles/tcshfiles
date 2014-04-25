@@ -48,10 +48,10 @@ bindkey '[6~' history-search-forward
 bindkey '[[A' run-help
 
 # F2: set the mark command to cursor position
-bindkey '[[B' set-mark-command 
+bindkey '[[B' set-mark-command
 
 # F3: move cursor to the marked position
-bindkey '[[C' exchange-point-and-mark 
+bindkey '[[C' exchange-point-and-mark
 
 # F4: unbound
 bindkey '[[D' undefined-key
