@@ -1,7 +1,7 @@
 ### csh.login -- TCSH Login Script
 
 # Author: Michael Grünewald
-# Date: Ven 26 jan 2007 19:32:47 CET
+# Date: Fri Jan 26 19:32:47 CET 2007
 
 # TCSH Files (https://bitbucket.org/michipili/tcshfiles)
 # This file is part of TCSH Files

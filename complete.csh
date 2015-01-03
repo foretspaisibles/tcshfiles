@@ -1,7 +1,7 @@
 ### csh.complete -- Completion for TCSH
 
 # Author: Michael Grünewald
-# Date: Ven 18 jan 2008 23:30:17 CET
+# Date: Fri Jan 18 23:30:17 CET 2008
 
 # TCSH Files (https://bitbucket.org/michipili/tcshfiles)
 # This file is part of TCSH Files
