@@ -1,7 +1,7 @@
-# TCSH Files (https://bitbucket.org/michipili/tcshfiles)
+# TCSH Files (https://github.com/michipili/tcshfiles)
 # This file is part of TCSH Files
 #
-# Copyright (C) 2008-2014 Michael Grünewald
+# Copyright © 2008–2015 Michael Grünewald
 #
 # This file must be used under the terms of the CeCILL-B.
 # This source file is licensed as described in the file COPYING, which
