@@ -416,6 +416,8 @@ alias ff    	'find . -name $*'
 alias h		history 25
 alias j		jobs -l
 
+alias git-recent		'git log -20 --oneline'
+
 
 #
 # Masque de permission pour les nouveaux fichiers
