@@ -146,13 +146,21 @@ alias _complete_git_remote \
 alias _complete_git_command \
     '_complete_git_alias | xargs echo $_complete_git_words'
 
+alias _complete_git_recent_commits \
+    'git log -20 --pretty=%h'
+
 foreach gitword ( $_complete_git_words )
     alias git-$gitword "git $gitword"
 end
 
+complete -git-rec*	'p/0/(git-recent)/'
+
 complete git-help	'p/1/$_complete_git_words/'
 complete git-svn	'p/1/$_complete_git_svn_words/'
 complete git-branch	'p/*/`_complete_git_branch | xargs echo -m -d`/'
+complete git-commit	'n/--fixup/`_complete_git_recent_commits`/' \
+			'n/--squash/`_complete_git_recent_commits`/' \
+			'p/*/(--amend --fixup --squash --allow-empty --author --file --dry-run --long --short --date --message --template --signoff)/' \
 complete git-config	'p/1/(--global --get-regexp --list)/'
 complete git-diff	'p/*/`_complete_git_branch | xargs echo --check --staged --stat -- *`/'
 complete git-difftool	'p/*/`_complete_git_branch | xargs echo --no-prompt --staged -- *`/'
