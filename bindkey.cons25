@@ -69,11 +69,11 @@ bindkey '^[[S' complete-word-raw
 # F8: insert last item of previous command
 bindkey '^[[T' insert-last-word
 
-# F9: unbound
-bindkey '^[[U' undefined-key
+# F9: do a 'git-recent'
+bindkey -s '^[[U' "^Ugit-recent\n"
 
 # F10: do an 'ls -l'
-bindkey -s '^[[V'  "^Uls -l\n"
+bindkey -s '^[[V'  "^Uls -l\n^Y"
 
 # F11: display load average and current process status
 bindkey '^[[W' load-average

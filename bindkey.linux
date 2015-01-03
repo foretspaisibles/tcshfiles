@@ -69,10 +69,10 @@ bindkey '[18~' complete-word-raw
 bindkey '[19~' insert-last-word
 
 # F9: unbound
-bindkey '[20~' undefined-key
+bindkey -s '^[[20~' "^Ugit-recent\n"
 
 # F10: do an 'ls -l'
-bindkey -s '[21~'  "^Uls -l\n"
+bindkey -s '[21~'  "^Uls -l\n^Y"
 
 # F11: display load average and current process status
 bindkey '[23~' load-average
