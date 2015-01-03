@@ -34,6 +34,8 @@ CSHBINDKEY+=		bindkey.linux
 
 CSHTOOL+=		scm_prompt_make.sh
 
+PROJECTDISTEXCLUDE=	Wiki
+
 .include "conf.tcsh.mk"
 
 ### End of file `Makefile'
