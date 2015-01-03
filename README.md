@@ -13,8 +13,7 @@ Linux. Its most important features are:
 
 # Installation
 
-The installation procedures uses
-[BSD Make Pallàs Scripts](https://bitbucket.org/michipili/bsdmakepscripts).
+The installation procedures uses [BSD Owl][2].
 It will overwrite the system scripts `csh.login`, `csh.logout` and
 `csh.cshrc`.
 
@@ -107,3 +106,4 @@ phases.
 Michael Grünewald in Bonn, on  April 25, 2014
 
   [1]: http://sourceforge.net/projects/tcshrc/
+  [2]: https://github.com/michipili/bsdowl
