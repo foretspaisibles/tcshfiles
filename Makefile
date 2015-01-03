@@ -14,25 +14,25 @@
 # are also available at
 # http://www.cecill.info/licences/Licence_CeCILL-B_V1-en.txt
 
-PROJECT = tcshfiles
-AUTHOR = Michael Grünewald
-VERSION = 1.1
+PROJECT=		tcshfiles
+VERSION=		1.1.1-current
+OFFICER=		michipili@gmail.com
 
-CSH = csh.cshrc
-CSH+= csh.login
-CSH+= csh.logout
+CSH=			csh.cshrc
+CSH+=			csh.login
+CSH+=			csh.logout
 
-CSHRC+= bindkey.csh
-CSHRC+= complete.csh
-CSHRC+= gnustep.csh
-CSHRC+= compat-i386.csh
-CSHRC+= lang.csh
+CSHRC+=			bindkey.csh
+CSHRC+=			complete.csh
+CSHRC+=			gnustep.csh
+CSHRC+=			compat-i386.csh
+CSHRC+=			lang.csh
 
-CSHBINDKEY+= bindkey.xterm
-CSHBINDKEY+= bindkey.cons25
-CSHBINDKEY+= bindkey.linux
+CSHBINDKEY+=		bindkey.xterm
+CSHBINDKEY+=		bindkey.cons25
+CSHBINDKEY+=		bindkey.linux
 
-CSHTOOL+= scm_prompt_make.sh
+CSHTOOL+=		scm_prompt_make.sh
 
 .include "conf.tcsh.mk"
 
