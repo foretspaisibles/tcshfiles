@@ -121,8 +121,8 @@ complete svn \
 set _complete_git_words=(\
     add am archive bisect branch bundle checkout cherry-pick citool	\
     clean clone commit config describe diff fetch format-patch gc grep	\
-    gui	init log merge mv notes pull push rebase reset revert rm	\
-    shortlog show stash status submodule svn tag			\
+    gui init log merge mergetool mv notes pull push rebase reset	\
+    revert rm shortlog show stash status submodule svn tag		\
     )
 
 set _complete_git_svn_words=(\
@@ -140,33 +140,40 @@ alias _complete_git_branch \
 alias _complete_git_origin_branch \
     'git for-each-ref --format="%(refname)" refs/remotes/origin | sed -n -e "/HEAD/d" -e "s@refs/remotes/origin/@@"'
 
+alias _complete_git_remote \
+    'git remote'
+
 alias _complete_git_command \
     '_complete_git_alias | xargs echo $_complete_git_words'
 
-complete git \
-    'p/1/$_complete_git_words/' \
-    'n/svn/$_complete_git_svn_words/' \
-    'n/help/$_complete_git_words/' \
-    'n/branch/`_complete_git_branch | xargs echo -m -d`/' \
-    'n/config/(--global --get-regexp --list)/' \
-    'n/diff/`_complete_git_branch | xargs echo --check --staged --stat -- *`/' \
-    'n/difftool/`_complete_git_branch | xargs echo --no-prompt --staged -- *`/' \
-    'n/fetch/`git remote`/' \
-    'n/merge/`_complete_git_branch`/' \
-    'n/log/`_complete_git_branch | xargs echo -- --name-only --name-status --reverse --committer= --no-color --relative --ignore-space-change --ignore-space-at-eol --format=medium --format=full --format=fuller`/' \
-    'n/stash/(apply list save pop clear)/' \
-    'n/push/`git remote`/' \
-    'N/push/`_complete_git_origin_branch`/' \
-    'n/pull/`git remote | xargs echo --rebase`/' \
-    'n/--rebase/`git remote`/' \
-    'N/--rebase/`_complete_git_origin_branch`/' \
-    'N/pull/`_complete_git_origin_branch`/' \
-    'n/rebase/`_complete_git_branch | xargs echo --continue --abort --onto --skip --interactive`/' \
-    'N/rebase/`_complete_git_branch`/' \
-    'n/remote/(show add rm prune update)/' \
-    'N/remote/`git remote`/' \
-    'n/checkout/`_complete_git_branch | xargs echo -b --`/' \
-    'N/-b/`_complete_git_branch`/'
+foreach gitword ( $_complete_git_words )
+    alias git-$gitword "git $gitword"
+end
+
+complete git-help	'p/1/$_complete_git_words/'
+complete git-svn	'p/1/$_complete_git_svn_words/'
+complete git-branch	'p/*/`_complete_git_branch | xargs echo -m -d`/'
+complete git-config	'p/1/(--global --get-regexp --list)/'
+complete git-diff	'p/*/`_complete_git_branch | xargs echo --check --staged --stat -- *`/'
+complete git-difftool	'p/*/`_complete_git_branch | xargs echo --no-prompt --staged -- *`/'
+complete git-fetch	'p/1/`_complete_git_remote`/'
+complete git-merge	'p/*/`_complete_git_branch | xargs echo -- --no-ff --ff-only`/'
+complete git-log	'p/*/`_complete_git_branch | xargs echo -- --name-only --name-status --reverse --committer= --no-color --relative --ignore-space-change --ignore-space-at-eol --format=medium --format=full --format=fuller`/'
+complete git-stash	'p/1/(apply list save pop clear)/'
+complete git-push	'p/1/`_complete_git_remote`/' \
+			'p/*/`_complete_git_origin_branch`/'
+complete git-pull	'p/1/`git remote | xargs echo --rebase`/' \
+			'n/--rebase/`git remote`/' \
+			'N/--rebase/`_complete_git_origin_branch`/' \
+			'p/*/`_complete_git_origin_branch`/'
+complete git-rebase	'p/1/`_complete_git_branch | xargs echo --continue --abort --onto --skip --interactive`/' \
+			'n/--onto/`_complete_git_branch`/' \
+			'p/*/rebase/`_complete_git_branch`/'
+complete git-remote	'p/1/(show add rm prune update)/' \
+			'p/2/`_complete_git_remote`/'
+complete git-checkout	'p/1/`_complete_git_branch | xargs echo -b --`/' \
+			'N/-b/`_complete_git_branch`/' \
+			'p/*/`_complete_git_branch`/'
 
 
 #
